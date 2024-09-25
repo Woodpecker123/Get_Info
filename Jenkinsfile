@@ -7,6 +7,7 @@ pipeline {
       }
 
   }
+  }
      environment {
     KUBECONFIG = '/var/lib/jenkins/admin.conf'
   }
