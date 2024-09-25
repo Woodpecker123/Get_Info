@@ -1,18 +1,13 @@
 pipeline {
   agent any
   stages {
-    stage('checkversion') {
+        stage('WP') {
       steps {
-          sh 'python3 --version'
-          sh 'pip install sasctl'
+        sh 'kubectl get nodes'
       }
-    }
-     stage('run python') {
-      steps {
-       
-        sh 'python3 ModelPublish.py'
-      }
-    }
 
+  }
+     environment {
+    KUBECONFIG = '/var/lib/jenkins/admin.conf'
   }
 }
