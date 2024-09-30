@@ -8,8 +8,10 @@ pipeline {
             steps {
                 script {
                     // Convert the script to Unix format
-                    sh 'dos2unix get-k8s-info.sh'
-                    sh 'chmod +x get-k8s-info.sh'
+                  //  sh 'dos2unix get-k8s-info.sh'
+                  //  sh 'chmod +x get-k8s-info.sh'
+                  sh 'mkdir /var/lib/jenkins/getinfo'
+                  sh 'chmod +x getinfo'
                 }
             }
         }
@@ -18,7 +20,7 @@ pipeline {
             steps {
                 script {
                     // Run the script with parameters and automatically answer "y" to prompts
-                    sh 'yes | ./get-k8s-info.sh --case CS0000000 --namespace sit --logs sas.com/deployment=sas-viya --deploypath /var/lib/jenkins/viya_sit --out /root/getinfo'
+                   // sh 'yes | ./get-k8s-info.sh --case CS0000000 --namespace sit --logs sas.com/deployment=sas-viya --deploypath /var/lib/jenkins/viya_sit --out /root/getinfo'
                 }
             }
         }
