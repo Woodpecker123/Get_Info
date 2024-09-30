@@ -7,7 +7,7 @@ pipeline {
     stage('WP') {
       steps {
         sh 'chmod +x get-k8s-info.sh'
-        sh 'get-k8s-info.sh'
+        sh './get-k8s-info.sh'
       }
     }
   }
