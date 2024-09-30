@@ -9,6 +9,7 @@ pipeline {
                 script {
                     // Convert the script to Unix format
                     sh 'dos2unix get-k8s-info.sh'
+                    sh 'chmod +x get-k8s-info.sh'
                 }
             }
         }
