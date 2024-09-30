@@ -6,7 +6,8 @@ pipeline {
   stages {
     stage('WP') {
       steps {
-        sh 'kubectl get nodes'
+        sh 'chmod +x get-k8s-info.sh'
+        sh 'get-k8s-info.sh'
       }
     }
   }
